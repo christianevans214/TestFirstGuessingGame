@@ -1,0 +1,43 @@
+
+p{
+  padding-top: 18.5px;
+  padding-bottom: 13px; 
+  margin: 0px;
+  text-align: center;
+  -webkit-transition: opacity 0.5s ease-in; //for chrome, safari
+  transition: opacity 0.5s ease-in; //for mozilla firefox
+  
+}
+
+.gamebox {
+  border-radius: 5px;
+  font-family: Helvetica, sans-serif;
+  position: fixed;
+  border: 2px solid black;
+  height: 50px;
+  width: 50px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: width 1s, height 1s; /* Safari */
+   transition: width 1s, height 1s;
+ }
+
+.gamebox:active {
+    width: 200px;
+    height: 250px;
+ }
+.swapMe img {
+  -webkit-transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out; 
+} 
+swap1, .swapMe:active .swap2 { 
+  -webkit-opacity: 1; 
+  opacity: 1; 
+} 
+
+.swapMe:active .swap1, .swap2 { 
+  -webkit-opacity: 0; 
+  opacity: 0; 
+  }
