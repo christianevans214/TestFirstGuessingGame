@@ -1,13 +1,30 @@
 <html>
-  <head> </head>
-  
-  <body> 
-    <div class = "gamebox">
-      <div class = "swapMe">
-        <p class = "swap1">Play?</p> 
-        <p class = "swap2">Play!</p>
+
+<head> </head>
+
+<body>
+  <div class="box">
+    <p class="link"> Play </p>
+    <div class="gameboard">
+      <p> Guess 1-100</p>
+      <form>
+        <input id="numGuess" type="text" name="guess">
+      </form>
+      <div class="buttons">
+        <button id="submitbtn" type="button"> Submit </button>
+        <button id="hint" type="button"> Hint </button>
+        <button id="reset" type="button"> Reset </button>
       </div>
-      
+      <ul id="Guesses"> </ul>
+      <div class = "errorMessage"> <p id = "errMessage"></p> </div>
+      <p id="Output"> </p>
+
     </div>
-  </body>
-  </html>
+    <div class="finalMessage">
+      <p id="message"></p>
+      <button id="playAgain"> Play Again? </button>
+    </div>
+  </div>
+</body>
+
+</html>
