@@ -1,43 +1,127 @@
+/* Set it all up... */
 
-p{
-  padding-top: 18.5px;
-  padding-bottom: 13px; 
-  margin: 0px;
-  text-align: center;
-  -webkit-transition: opacity 0.5s ease-in; //for chrome, safari
-  transition: opacity 0.5s ease-in; //for mozilla firefox
-  
+body {
+  background: linear-gradient(135deg, #EA5C54 0%, violet 100%);
+  font-family: 'Menlo', Monaco, monospace;
+  font-size: 14px;
+  font-weight: 100;
+  cursor: default;
 }
 
-.gamebox {
-  border-radius: 5px;
-  font-family: Helvetica, sans-serif;
+.box {
+  color: #c0c0c0;
+  background: #262335;
+  /*overflow: hidden;*/
+  
+  border-radius: 100%;
+  border: 2px black solid;
   position: fixed;
-  border: 2px solid black;
   height: 50px;
   width: 50px;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: width 1s, height 1s; /* Safari */
-   transition: width 1s, height 1s;
- }
+  -webkit-transform: translate(-50%, -50%);
+  transition: width 1.0s, height 1.0s;
+  -webkit-transition: width 1.0s, height 1.0s;
+}
 
-.gamebox:active {
-    width: 200px;
-    height: 250px;
- }
-.swapMe img {
-  -webkit-transition: all 1s ease-in-out; 
-  transition: all 1s ease-in-out; 
-} 
-swap1, .swapMe:active .swap2 { 
-  -webkit-opacity: 1; 
-  opacity: 1; 
-} 
+.link {
+  margin-top: 15px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
 
-.swapMe:active .swap1, .swap2 { 
-  -webkit-opacity: 0; 
-  opacity: 0; 
-  }
+.finalMessage {
+  text-align: center;
+  position: absolute;
+  text-shadow: 0 0 10px violet;
+  left: 11%;
+  width: 75%;
+  font-size: 32px;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  pointer-events: none;
+}
+
+.gameboard {
+  margin-top: 20px;
+  text-shadow: 0 0 2px violet;
+  text-align: center;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+  opacity: 0;
+}
+/* ..and release */
+
+.grow {
+  height: 350px;
+  width: 350px;
+}
+
+.playbtngone {
+  opacity: 0;
+}
+
+.appear {
+  -webkit-transition: all 1.5 ease-in-out;
+  transition: all 1.5s ease-in-out;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.disappear {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.link:hover {
+  transition: all 0.2s ease-in;
+  text-shadow: 0 0 5px violet;
+}
+
+#numGuess {
+  width: 45%;
+}
+
+#Guesses {
+  position: absolute;
+  list-style-type: none;
+  width: 78%;
+}
+
+.buttons {
+  margin-top: 3px;
+}
+
+button {
+  font-family: 'Menlo', Monaco, monospace;
+  color: #c0c0c0;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#Output {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 75%;
+}
+
+.errorMessage {
+  text-shadow: 0 0 10px violet;
+  font-size: 17px;
+  position: absolute;
+  text-align: center;
+  right: 7.5%;
+  width: 85%;
+  top: 60%;
+  display: none;
+}
