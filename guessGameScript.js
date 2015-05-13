@@ -1,4 +1,8 @@
-/*Things to do: Design the buttons and input form a bit more if you have time. Make it so that when you click enter, it submits the answer. WHOLE THING needs to be refactored! Looks not the best!*/
+/*TODO: Design: prettify buttons and input form a bit more if you have time.
+        Refactor: cache the DOM requests where you can to optimize. 
+                  submit function needs to be cleaned up. 
+                  
+*/
 
 $(document).ready(function() {
   $(".link").click(function() {
@@ -13,9 +17,41 @@ $(document).ready(function() {
     var guessArr = [];
     var numberToGuess = Math.ceil(Math.random() * 100);
     $('#Output').html("Number of guesses: " + guesses);
-
+    $('form').submit(function(e){
+    e.preventDefault();
+    });
     //submit button
-    $('#submitbtn').click(function() {
+    $('#submitbtn').click(function(){
+      submit();
+    });
+    $('#numGuess').keypress(function(event){
+      if(event.keyCode == 13){
+        $(this).blur();
+        submit();
+      }
+    })
+    //reset button
+    $(document).on('click', '#reset', function() {
+      resetFun();
+    });
+    //hint button
+    $(document).on('click', '#hint', function() {
+        $('input').val("");
+        $('#Guesses').empty();
+        $('#message').html("The correct answer is " + numberToGuess + ".");
+        finalMessageAppear();
+
+      })
+      // play again button
+    $(document).on('click', '#playAgain', function() {
+      resetFun();
+      finalMessageAppear();
+
+    });
+
+    //The things that make this game tick.
+    //function of what happens when you submit guess
+    var submit = function() {
       var num = $('input[name=guess]').val();
       if (num == numberToGuess) {
         $('#message').html("You win!");
@@ -37,32 +73,13 @@ $(document).ready(function() {
             $(".errorMessage").fadeIn().delay(1000).fadeOut('slow');
           }
         } else {
+          $("#numGuess").blur();
           $('#message').html("You Lose.")
           finalMessageAppear();
         }
       }
       $('input').val("");
-    });
-    //reset button
-    $(document).on('click', '#reset', function() {
-      resetFun();
-    });
-    //hint button
-    $(document).on('click', '#hint', function() {
-        $('input').val("");
-        $('#Guesses').empty();
-        $('#message').html("The correct answer is " + numberToGuess + ".");
-        finalMessageAppear();
-
-      })
-      // play again button
-    $(document).on('click', '#playAgain', function() {
-      resetFun();
-      finalMessageAppear();
-
-    });
-
-    //The things that make this game tick.
+    }
     //function to reset the boardgame
     var resetFun = function() {
       $('input').val("");
