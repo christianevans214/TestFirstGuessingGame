@@ -62,7 +62,7 @@ $(document).ready(function() {
           if (check === "validGuess") {
             $("#Guesses").append("<li>" + answer(num, numberToGuess, guesses, guessArr) + "</li>");
             guessArr.push(num);
-            guesses = guesses - 1;
+            guesses--;
             $('#Output').html("Number of guesses: " + guesses);
           } else if (check === "alreadyGuessed") {
             $("#errMessage").html("You've already guessed that.");
