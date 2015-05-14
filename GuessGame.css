@@ -1,5 +1,5 @@
-/* Set it all up... */
 
+/* static gameboard setup */
 body {
   background: linear-gradient(135deg, #EA5C54 0%, violet 100%);
   font-family: 'Titillium Web';
@@ -11,10 +11,8 @@ body {
 .box {
   color: #c0c0c0;
   background: #262335;
-  overflow: hidden;
-  
   border-radius: 100%;
-  border: 2px black solid;
+  border: 2px violet solid;
   position: fixed;
   height: 50px;
   width: 50px;
@@ -37,6 +35,56 @@ body {
   transition: all 0.5s ease-in-out;
 }
 
+.gameboard {
+  margin-top: 20px;
+  text-shadow: 0 0 2px violet;
+  text-align: center;
+  -webkit-transition: all 1.5s ease-in-out;
+  transition: all 1.5s ease-in-out;
+  opacity: 0;
+}
+
+#numGuess {
+  width: 45%;
+}
+
+.buttons {
+  margin-top: 3px;
+}
+
+button {
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 12px;
+  color: #c0c0c0;
+  background-color: #262335;
+  border-radius: 5px;
+  border: 0px;
+}
+
+#Guesses {
+  position: absolute;
+  list-style-type: none;
+  width: 78%;
+}
+
+.errorMessage {
+  text-shadow: 0 0 10px violet;
+  font-size: 17px;
+  position: absolute;
+  text-align: center;
+  right: 7.5%;
+  width: 85%;
+  top: 63%;
+  display: none;
+}
+
+#Output {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 75%;
+}
+
 .finalMessage {
   text-align: center;
   position: absolute;
@@ -51,15 +99,7 @@ body {
   pointer-events: none;
 }
 
-.gameboard {
-  margin-top: 20px;
-  text-shadow: 0 0 2px violet;
-  text-align: center;
-  -webkit-transition: all 1.5s ease-in-out;
-  transition: all 1.5s ease-in-out;
-  opacity: 0;
-}
-/* ..and release */
+/* Animations/Transitions for the DOM */
 
 .grow {
   height: 350px;
@@ -84,46 +124,15 @@ body {
   pointer-events: none;
 }
 
-.link:hover {
+.link:hover{
   transition: all 0.2s ease-in;
   text-shadow: 0 0 5px violet;
 }
-
-#numGuess {
-  width: 45%;
+button:hover {
+text-shadow: 0 0 5px violet;
+text-decoration: underline;
 }
 
-#Guesses {
-  position: absolute;
-  list-style-type: none;
-  width: 78%;
-}
-
-.buttons {
-  margin-top: 3px;
-}
-
-button {
-  font-family: 'Titillium Web', sans-serif;
-  color: #c0c0c0;
-  background-color: black;
-  border-radius: 5px;
-}
-
-#Output {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  top: 75%;
-}
-
-.errorMessage {
-  text-shadow: 0 0 10px violet;
-  font-size: 17px;
-  position: absolute;
-  text-align: center;
-  right: 7.5%;
-  width: 85%;
-  top: 63%;
-  display: none;
+button:focus, input:focus {
+  outline: 0;
 }
