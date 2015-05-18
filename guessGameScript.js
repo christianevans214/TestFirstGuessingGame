@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
     //submit button
     $('#submitbtn').click(function(){
-      submit();
+    	submit();
     });
     $('#numGuess').keypress(function(event){
       if(event.keyCode == 13){
