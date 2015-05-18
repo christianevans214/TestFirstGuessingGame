@@ -1,18 +1,19 @@
+<!DOCTYPE html>
 <html>
 
 <head> 
-  <link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
-  <link type="text/css" rel="stylesheet" href= "GuessGame.css" />
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="guessGameScript.js"></script>
+<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href= "guessingGameCSS.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="guessGameScript.js"></script>
 </head>
 
 <body>
   <div class="box">
     <p class="link"> Play </p>
     <div class="gameboard">
-      <p> Guess 1-100</p>
-      <input id="numGuess" type="text" name="guess">
+      
+      <input id="numGuess" type="text" name="guess", placeholder = "Enter a number from 1-100">
       <div class="buttons">
         <button id="submitbtn" type="button"> Submit </button>
         <button id="hint" type="button"> Hint </button>
